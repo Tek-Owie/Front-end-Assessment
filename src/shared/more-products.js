@@ -1,5 +1,5 @@
 export const samples = [ 
-    {
+        {
             "name": "PlayStation 5",
             "id": "ps-5",
             "inStock": false,

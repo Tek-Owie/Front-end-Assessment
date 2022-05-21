@@ -8,37 +8,38 @@ export default class NavBar extends React.Component {
             active: false
         }
 
-        this.onClick = this.onClick.bind(this);
+        this.toggleActive = this.toggleActive.bind(this);
     }
 
-    onClick() {    
+    toggleActive() {    
         this.setState(prevState => ({active: !prevState.active}));  
     }
 
     render() 
     { 
         return (
-        <nav className="navbar">
-            <div className="menu-links">
-                <ul>
-                    <li><a href="#" onClick={this.onClick} className={this.state.active ? 'active' : ''}>women</a></li>
-                    <li><a href="" onClick={this.onClick} className={this.state.active ? 'active' : ''}>men</a></li>
-                    <li><a href="" onClick={this.onClick} className={this.state.active ? 'active' : ''}>kids</a></li>
-                </ul>
-            </div>
-            <div className="brand-logo">
-                <img src="assets/a-logo.svg" alt="brand logo" />
-            </div>
-            <div className="checkout">
-                <select name="currency" id="">
-                    <option value="dollars">$</option>
-                </select>
-                <div>
-                    <span className="cart">
-                        <img src="assets/shopping-cart.svg" alt="shopping cart" />
-                    </span>
+        <div className="navbar">
+            <nav>
+                <div className="menu-links">
+                    <ul>
+                        <li><a href="#" onClick={this.toggleActive} className={this.state.active ? 'active' : ''}>women</a></li>
+                        <li><a href="#" onClick={this.toggleActive} className={this.state.active ? 'active' : ''}>men</a></li>
+                    </ul>
                 </div>
-            </div>
-        </nav>
+                <div className="brand-logo">
+                    <img src="assets/a-logo.svg" alt="brand logo" />
+                </div>
+                <div className="checkout">
+                    <select name="currency" id="">
+                        <option value="dollars">$</option>
+                    </select>
+                    <div>
+                        <span className="cart">
+                            <img src="assets/shopping-cart.svg" alt="shopping cart" />
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
     )}
 }
