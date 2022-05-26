@@ -1,29 +1,27 @@
 import React from "react";
+import { NavLink } from  'react-router-dom';
+import { categories } from "../shared/categories";
 
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            active: false
+            categories
         }
-
-        this.toggleActive = this.toggleActive.bind(this);
     }
-
-    toggleActive() {    
-        this.setState(prevState => ({active: !prevState.active}));  
-    }
-
-    render() 
-    { 
+    render()
+    {
         return (
         <div className="navbar">
             <nav>
                 <div className="menu-links">
                     <ul>
-                        <li><a href="#" onClick={this.toggleActive} className={this.state.active ? 'active' : ''}>women</a></li>
-                        <li><a href="#" onClick={this.toggleActive} className={this.state.active ? 'active' : ''}>men</a></li>
+                        {
+                            this.state.categories.map((category) => (
+                                <li><NavLink to={category.name} key={category.id}>{category.name}</NavLink></li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className="brand-logo">

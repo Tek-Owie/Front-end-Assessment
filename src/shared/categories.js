@@ -1,11 +1,11 @@
 export const categories = 
-{
-    "categories": [
-        {
-          "name": "clothes"
-        },
-        {
-          "name": "tech"
-        }
-      ]
-}
+[ 
+  {
+  "name": "clothes",
+    "id": 1
+  },
+  {
+    "name": "tech",
+    "id": 2
+  }
+]
